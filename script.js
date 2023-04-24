@@ -1,27 +1,29 @@
 const h1 = document.querySelector('h1');
-const form = document.querySelector('#form');
 const input1 = document.querySelector('#calculo1');
 const input2 = document.querySelector('#calculo2');
 const btnCalcular = document.querySelector('#btnCalcular');
-const pResult = document.querySelector('#result')
+const sum = document.querySelector('#sum');
+const dif = document.querySelector('#dif');
+const pro = document.querySelector('#pro');
+const div = document.querySelector('#div');
 
-//Prevent default evita que se recargue si es un form
+const pResult = document.querySelector('#result');
 
-form.addEventListener('submit',sumarInputsValues);
 
-form.addEventListener('mouseover',enviarFormulario);
+function btnOnClick(){
+    let value1 = parseInt(input1.value);
+    let value2 = parseInt(input2.value);
+    let resultValue = 0;
+    if (sum.checked){
+        resultValue = value1+value2
+    } else if (dif.checked){
+        resultValue = value1-value2
+    } else if (pro.checked){
+        resultValue = value1*value2
+    } else if (div.checked){
+        resultValue = value1/value2
+    }
 
-// btnCalcular.addEventListener('click',btnOnClick);
-
-function sumarInputsValues(event) {
-    console.log({event})
-    event.preventDefault();
-    const sumaInputs = parseInt(input1.value) + parseInt(input2.value);
-    pResult.innerText = `Resultado: ${sumaInputs}`
-}
-
-function enviarFormulario(e) {
-    e.preventDefault();
-    
-    alert("virus")
+    resultValue = `The calculated value is: ${resultValue}`
+    pResult.innerHTML = resultValue
 }
