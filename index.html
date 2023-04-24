@@ -9,12 +9,15 @@
 <body>
     <h1 >Basic DOM manipulation</h1>
 
-<form id="form">
+    <input type="radio" id="sum" value="sum" name="operation" checked><label for="sum">Addition</label>
+    <input type="radio" id="dif" value="sum"  name="operation"><label for="dif">Difference</label>
+    <input type="radio" id="pro" value="sum"  name="operation"><label for="pro">Multiplication</label>
+    <input type="radio" id="div" value="sum"  name="operation"><label for="div">Division</label>
+
     <input id="calculo1" placeholder="Define first value" >
     <input id="calculo2" placeholder="Define second value" >
-    <button id="btnCalcular">Calc</button>
-</form>
-    
+    <button id="btnCalcular" onclick="btnOnClick()">Calc</button>
+
     <p id="result"></p>
 
     <script src="./script.js"></script>
